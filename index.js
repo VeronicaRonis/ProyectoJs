@@ -1,30 +1,54 @@
-let nombre = prompt("Ingrese su nombre");
-let cuotas = parseInt(prompt(`Hola  ${nombre}, Ingrese la cantidad de cuotas`))
-
-let obra1 = 250000
-let obra2 = 300000
-let obra3 = 500000
-
-/* if (cuotas === 1) {
-    console.log("El valor en un pago es: ", obra1);
-} else if (cuotas === 3) {
-    let resultado3 = obra1 / 3
-    console.log("El valor en tres pagos es ", Math.ceil(resultado3));
-
-} else if (cuotas === 6) {
-    let resultado6 = obra1 / 6
-    console.log("El valor en tres pagos es ", Math.ceil(resultado6))
-
-} else {
-    console.log("Si ingresa 1, 3 o 6 las cuotas son sin interés")
-} */
 
 
+let obras = [{
+    artista: "Nan Goldin",
+    precio: 1000,
+    fecha: "15/7/1992",
+    información: "Lorem Ipsum"
+},
+
+{
+    artista: "Alessandra Sanguinetti",
+    precio: 1000,
+    fecha: "15/8/1997",
+    información: "Lorem Ipsum"
+},
+{
+    artista: "Adriana Lestido",
+    precio: 900,
+    fecha: "15/6/1997",
+    información: "Lorem Ipsum"
+}
+
+]
+
+function recorrer() {
+    let nombre = prompt("Ingrese su nombre");
+    let pregunta = alert(`Hola ${nombre} te presentamos las obras disponibles `)
+    let finalString = "Si desea comprar la obra de arte, ingrese 'comprar', de lo contrario escriba 'no'. Si desea salir escriba 'salir' "
+
+    for (i = 0; i < obras.length; i++) {
+        let datos = prompt(obras[i].artista + ' ' + 'precio: ' + ' ' + obras[i].precio + finalString)
+        if ( datos === "comprar") {
+            let cuotas = parseInt(prompt(`Hola  ${nombre}, Ingrese la cantidad de cuotas`))
+            alert(`el valor final es: , ${cuotas + cuotas * 29 / 100}`)
+        } else if (datos === "salir"){
+            break
+        } else
+        { console.log(obras) }
+
+
+
+    }
+
+}
+recorrer()
+/* 
+let cuotas = parseInt(prompt(`Hola  ${nombre}, Si quiere comprar, ingrese la cantidad de cuotas`))
 for (let i = 0; i <= cuotas; i++) {
-    if (i === cuotas) {
+    if (i === obras[].precio) {
         console.log("cantidad de cuotas ingresadas: ", i)
         alert(`el valor final es: , ${cuotas + cuotas*29 /100}`)
         break
     }
-}
-
+}  */
